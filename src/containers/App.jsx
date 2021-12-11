@@ -2,6 +2,7 @@ import React from "react";
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import ErrorBoundry from '../components/ErrorBoundry';
 
 
 
@@ -49,7 +50,9 @@ class App extends React.Component {
 
 
                     <Scroll>
-                        <CardList robots={filtterRobot} />
+                        <ErrorBoundry>
+                            <CardList robots={filtterRobot} />
+                        </ErrorBoundry>
                     </Scroll>
 
                 </React.Fragment>
